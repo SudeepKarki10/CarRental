@@ -14,7 +14,7 @@ const AboutPlan = () => {
         </h2>
       </div>
 
-      <div className="container-wrapper grid grid-cols-1 gap-4 ssm:grid-cols-2 lg:grid-cols-3 mx-20 my-20">
+      <div className="container-wrapper grid grid-cols-1 gap-4 ssm:grid-cols-2 lg:grid-cols-3 mx:0 my-5 sm:mx-20 sm:my-20">
         <div className="card flex flex-col col-span-1 justify-center items-center text-center mx-10">
           <img src={Card1} alt="" />
           <h2>Select Car</h2>

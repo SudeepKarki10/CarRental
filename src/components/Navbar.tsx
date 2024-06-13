@@ -25,11 +25,9 @@ const Navbar = () => {
           {menuItems.map((item, index) => (
             <li
               key={index}
-              className={`text-sm font-bold opacity-90 rounded-lg px-2 py-1 w-contain cursor-pointer ${
-                activeIndex === index
-                  ? "bg-orange-600 text-white"
-                  : "hover:text-white hover:bg-orange-400"
-              }`}
+              className={`text-lg font-semibold opacity-90 rounded-lg px-2 py-1 w-contain cursor-pointer ${
+                activeIndex === index ? " text-orange-600" : "text-black"
+              } hover:text-orange-600`}
               onClick={() => setActiveIndex(index)}
             >
               <Link to={`/${item.toLowerCase()}`}>{item}</Link>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Main_img from "../assets/hero1.png";
 import SearchForm from "../components/SearchForm";
 import AboutPlan from "../components/AboutPlan";
-import VehicleDetails from "../components/vehicleDetails";
+import VehicleDetails from "../components/VehicleDetails";
 
 const Home = () => {
   return (
@@ -13,11 +13,11 @@ const Home = () => {
             <h5 className="text-lg font-extrabold text-black mb-2">
               Plan your trip now
             </h5>
-            <h1 className="lg:text-5xl md:text-4xl text-5xl text-black font-bold mb-3">
-              Save <span className="text-orange-600">big</span> with <br />
-              our car rental
+            <h1 className="lg:text-6xl md:text-4xl text-5xl text-black font-bold mb-3 leading-relaxed">
+              Save <span className="text-orange-600">big</span> with our <br />
+              car rental
             </h1>
-            <p className="text-grey mb-8">
+            <p className="text-grey mb-8 mt-8">
               Rent the car of your dreams. Unbeatable prices, unlimited miles,
               flexible pick-up options and much more.
             </p>
