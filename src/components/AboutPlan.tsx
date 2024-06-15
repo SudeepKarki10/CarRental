@@ -1,6 +1,6 @@
 import Card1 from "../assets/card1.png";
-// import Card2 from "../assets/Card2";
-// import Card3 from "../assets/Card3";
+import Card2 from "../assets/card2.png";
+import Card3 from "../assets/card3.png";
 
 const AboutPlan = () => {
   return (
@@ -25,7 +25,7 @@ const AboutPlan = () => {
         </div>
 
         <div className="card flex flex-col col-span-1 justify-center items-center text-center mx-10">
-          <img src={Card1} alt="" />
+          <img src={Card2} alt="" />
           <h2>Contact Operator</h2>
           <p>
             Our knowledgeable and friendly operators are always ready to help
@@ -34,7 +34,7 @@ const AboutPlan = () => {
         </div>
 
         <div className="card flex flex-col col-span-1 justify-center items-center text-center mx-10">
-          <img src={Card1} alt="" />
+          <img src={Card3} alt="" />
           <h2>Let's Drive</h2>
           <p>
             Whether you're hitting the open road, we've got you covered with our

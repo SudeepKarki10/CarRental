@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
     <footer className="w-full">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-12 gap-8 py-14 px-4 lg:px-8 lg:grid-cols-8">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+        <div className="grid grid-cols-12 gap-8 py-14 px-2 lg:px-8 lg:grid-cols-8">
           <div className="mb-0 col-span-full lg:col-span-3 flex flex-col items-center lg:items-start">
             <h4 className="text-3xl font-bold  text-gray-900  mb-7">
               CAR <span className="text-zinc-800 font-normal">Rental</span>
@@ -26,7 +26,7 @@ const Footer = () => {
             <h4 className="text-lg text-gray-900 font-medium mb-7">
               Get In Touch
             </h4>
-            <ul className="text-black text-lg transition-all duration-500">
+            <ul className="text-black text-lg transition-all duration-500 overflow-x-hidden">
               <li className="mb-6">support@carrental.com</li>
               <li className="mb-6">+91 945 658 3256</li>
               <li>Kathmandu, Nepal.</li>
