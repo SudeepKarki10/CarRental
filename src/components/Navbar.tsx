@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/logo.png";
-import BackgroundImage from "../assets/nav-bg2.jpg";
+import Logo from "../../public/assets/logo.png";
+import BackgroundImage from "../../public/assets/nav-bg2.jpg";
 
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);

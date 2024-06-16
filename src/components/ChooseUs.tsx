@@ -1,7 +1,7 @@
-import BannerImg from "../assets/chooseus.png";
-import Img1 from "../assets/chooseus1.png";
-import Img2 from "../assets/chooseus2.png";
-import Img3 from "../assets/chooseus3.png";
+import BannerImg from "../../public/assets/chooseus.png";
+import Img1 from "../../public/assets/chooseus1.png";
+import Img2 from "../../public/assets/chooseus2.png";
+import Img3 from "../../public/assets/chooseus3.png";
 
 const ChooseUs = () => {
   return (

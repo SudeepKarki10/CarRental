@@ -1,0 +1,78 @@
+// src/api/cars.js
+
+export default function handler(req, res) {
+  const cars = [
+    {
+      name: "Tata Nexon",
+      properties: [
+        { name: "Model", value: "Nexon" },
+        { name: "Mark", value: "Tata" },
+        { name: "Year", value: "2021" },
+        { name: "Doors", value: "4/5" },
+        { name: "AC", value: "Yes" },
+        { name: "Transmission", value: "Automatic" },
+        { name: "Fuel", value: "Gasoline" },
+        { name: "Price", value: "30" },
+      ],
+      image: "/assets/tata.png",
+    },
+    {
+      name: "Maruti Suzuki Swift",
+      properties: [
+        { name: "Model", value: "Swift" },
+        { name: "Mark", value: "Maruti Suzuki" },
+        { name: "Year", value: "2020" },
+        { name: "Doors", value: "4/5" },
+        { name: "AC", value: "Yes" },
+        { name: "Transmission", value: "Manual" },
+        { name: "Fuel", value: "Gasoline" },
+        { name: "Price", value: "27" },
+      ],
+      image: "/assets/swift.png",
+    },
+    {
+      name: "Hyundai Creta",
+      properties: [
+        { name: "Model", value: "Creta" },
+        { name: "Mark", value: "Hyundai" },
+        { name: "Year", value: "2019" },
+        { name: "Doors", value: "4/5" },
+        { name: "AC", value: "Yes" },
+        { name: "Transmission", value: "Automatic" },
+        { name: "Fuel", value: "Diesel" },
+        { name: "Price", value: "32" },
+      ],
+      image: "/assets/creta.png",
+    },
+    {
+      name: "Toyota Hilux",
+      properties: [
+        { name: "Model", value: "Hilux" },
+        { name: "Mark", value: "Toyota" },
+        { name: "Year", value: "2018" },
+        { name: "Doors", value: "4/5" },
+        { name: "AC", value: "Yes" },
+        { name: "Transmission", value: "Automatic" },
+        { name: "Fuel", value: "Diesel" },
+        { name: "Price", value: "35" },
+      ],
+      image: "/assets/toyota.png",
+    },
+    {
+      name: "Mahindra Scorpio",
+      properties: [
+        { name: "Model", value: "Scorpio" },
+        { name: "Mark", value: "Mahindra" },
+        { name: "Year", value: "2022" },
+        { name: "Doors", value: "4/5" },
+        { name: "AC", value: "Yes" },
+        { name: "Transmission", value: "Manual" },
+        { name: "Fuel", value: "Diesel" },
+        { name: "Price", value: "28" },
+      ],
+      image: "/assets/scorpio.png",
+    },
+  ];
+
+  res.status(200).json(cars);
+}

@@ -1,4 +1,4 @@
-import PageBanner from "../assets/PageBanner.jpg";
+import PageBanner from "../../public/assets/PageBanner.jpg";
 
 const PagesBanner = () => {
   return (

@@ -12,7 +12,7 @@
         { "name": "Fuel", "value": "Gasoline" },
         { "name": "Price", "value": "30" }
       ],
-      "image": "src/assets/tata.png"
+      "image": "public/assets/tata.png"
     },
     {
       "name": "Maruti Suzuki Swift",
@@ -26,7 +26,7 @@
         { "name": "Fuel", "value": "Gasoline" },
         { "name": "Price", "value": "27" }
       ],
-      "image": "src/assets/swift.png"
+      "image": "public/assets/swift.png"
     },
     {
       "name": "Hyundai Creta",
@@ -40,7 +40,7 @@
         { "name": "Fuel", "value": "Diesel" },
         { "name": "Price", "value": "32" }
       ],
-      "image": "src/assets/creta.png"
+      "image": "public/assets/creta.png"
     },
     {
       "name": "Toyota Hilux",
@@ -54,7 +54,7 @@
         { "name": "Fuel", "value": "Diesel" },
         { "name": "Price", "value": "35" }
       ],
-      "image": "src/assets/toyota.png"
+      "image": "public/assets/toyota.png"
     },
     {
       "name": "Mahindra Scorpio",
@@ -68,7 +68,7 @@
         { "name": "Fuel", "value": "Diesel" },
         { "name": "Price", "value": "28" }
       ],
-      "image": "src/assets/scorpio.png"
+      "image": "public/assets/scorpio.png"
     }
   ]
 }

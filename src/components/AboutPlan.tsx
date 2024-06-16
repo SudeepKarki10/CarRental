@@ -1,6 +1,6 @@
-import Card1 from "../assets/card1.png";
-import Card2 from "../assets/card2.png";
-import Card3 from "../assets/card3.png";
+import Card1 from "../../public/assets/card1.png";
+import Card2 from "../../public/assets/card2.png";
+import Card3 from "../../public/assets/card3.png";
 
 const AboutPlan = () => {
   return (

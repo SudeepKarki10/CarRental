@@ -86,7 +86,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [cars, isOpen, formData.carType]);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;

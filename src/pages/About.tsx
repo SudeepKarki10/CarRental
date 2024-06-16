@@ -1,5 +1,5 @@
-import CarIcon from "../assets/card1.png"; // Import your car icon
-import AboutImage from "../assets/about-main.jpg"; // Import your about image
+import CarIcon from "../../public/assets/card1.png"; // Import your car icon
+import AboutImage from "../../public/assets/about-main.jpg"; // Import your about image
 import AboutPlan from "../components/AboutPlan";
 import Footer from "../components/Footer";
 import PagesBanner from "../components/PagesBanner";
