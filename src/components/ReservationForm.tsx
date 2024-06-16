@@ -57,9 +57,10 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
         console.log(data);
 
         const selectedCar = data.find((car) => car.name === formData.carType);
+        console.log(selectedCar?.image);
         if (selectedCar) {
           setCarImage(selectedCar.image);
-          //console.log(carImage);
+          console.log(carImage);
         } else {
           setCarImage("");
         }
@@ -86,7 +87,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [formData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
