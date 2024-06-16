@@ -13,7 +13,7 @@ const SearchForm = () => {
   const pickups = ["Koteshwor", "Baneshwor", "Bhaktapur", "Lalitput", "Patan"];
 
   const [isOpen, setIsOpen] = useState(false);
-  const [message, setMessage] = useState<String>("");
+  const [message, setMessage] = useState<string>("");
   const [formData, setFormData] = useState({
     carType: "",
     pickupLocation: "",

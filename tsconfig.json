@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "../Angela Yu/FrequentlyAsked.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
