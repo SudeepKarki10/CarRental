@@ -1,6 +1,6 @@
 import SearchForm from "../components/SearchForm";
 import AboutPlan from "../components/AboutPlan";
-import VehicleDetails from "../components/VehicleDetails";
+// import VehicleDetails from "../components/VehicleDetails";
 import HomeBanner from "../components/HomeBanner";
 import ChooseUs from "../components/ChooseUs";
 import Testimonials from "../components/TestimonialsComponent";
@@ -14,7 +14,7 @@ const Home = () => {
       <Hero />
       <SearchForm />
       <AboutPlan />
-      <VehicleDetails />
+      {/* <VehicleDetails /> */}
       <HomeBanner />
       <ChooseUs />
       <Testimonials />
