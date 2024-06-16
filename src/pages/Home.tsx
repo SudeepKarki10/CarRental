@@ -7,6 +7,7 @@ import Testimonials from "../components/TestimonialsComponent";
 import Hero from "../components/Hero";
 import GetOurApp from "../components/GetOurApp";
 import Footer from "../components/Footer";
+import Vehicledetails from "../components/VehicleDetails";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <SearchForm />
       <AboutPlan />
       {/* <VehicleDetails /> */}
+      <Vehicledetails />
       <HomeBanner />
       <ChooseUs />
       <Testimonials />
