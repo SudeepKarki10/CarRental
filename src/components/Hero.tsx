@@ -1,6 +1,16 @@
 import Main_img from "../../public/assets/hero4.png";
 
-const Hero = () => {
+interface VehicleDetailsProps {
+  searchFormRef: React.RefObject<HTMLDivElement>;
+}
+
+const Hero: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
+  function handleClick() {
+    if (searchFormRef.current) {
+      searchFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <div className="flex bg-grey-50">
       <div className="flex items-start justify-center text-center mb-10 w-full md:w-3/5 md:text-start md:h-full mt-0 md:mt-10 pt-5 md:ml-20 md:mr-0 ">
@@ -17,7 +27,10 @@ const Hero = () => {
             flexible pick-up options and much more.
           </p>
           <div className="btn-container flex flex-cols gap-3 md:justify-start md:items-start items-center justify-center">
-            <button className="btn border-amber-700 p-3 rounded-sm bg-[#FF4D00] text-lg font-bold text-white flex flex-cols justify-center items-center gap-2  w-1/2 sm:w-max">
+            <button
+              className="btn border-amber-700 p-3 rounded-sm bg-[#FF4D00] text-lg font-bold text-white flex flex-cols justify-center items-center gap-2  w-1/2 sm:w-max"
+              onClick={handleClick}
+            >
               Book Ride
               <span className="material-symbols-outlined items-center text-center ">
                 check_circle

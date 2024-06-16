@@ -25,7 +25,7 @@ const Navbar = () => {
   ].includes(location.pathname);
 
   return (
-    <div className="relative">
+    <div className=" bg-black  ssm:bg-white z-50">
       {showBackground && (
         <>
           <div className="absolute inset-0 z-0 opacity-10 bg-zinc-300 h-96">
@@ -41,7 +41,7 @@ const Navbar = () => {
       )}
 
       {/* Navbar */}
-      <div className="relative z-20 flex flex-wrap justify-between items-center h-20 md:mx-4 mx-5">
+      <div className="sticky top-0 z-20 flex flex-wrap justify-between items-center h-20 md:mx-4 mx-5">
         <div>
           <img src={Logo} alt="carrental" className="w-32 ml-0 md:ml-20" />
         </div>
@@ -79,14 +79,14 @@ const Navbar = () => {
               <div className="flex flex-col justify-between w-[20px] h-[20px] origin-center overflow-hidden">
                 {hamIsOpen ? (
                   <>
-                    <div className="bg-black h-[2px] w-7 origin-left"></div>
-                    <div className="bg-black h-[2px] w-7 rounded"></div>
-                    <div className="bg-black h-[2px] w-7 origin-left"></div>
+                    <div className="bg-white ssm:bg-black  h-[2px] w-7 origin-left"></div>
+                    <div className="bg-white ssm:bg-black h-[2px] w-7 rounded"></div>
+                    <div className="bg-white ssm:bg-black h-[2px] w-7 origin-left"></div>
                   </>
                 ) : (
                   <>
-                    <div className="absolute bg-black h-[2px] w-5 transform rotate-45 origin-center delay-300"></div>
-                    <div className="absolute bg-black h-[2px] w-5 transform -rotate-45 origin-center"></div>
+                    <div className="absolute bg-white ssm:bg-black h-[2px] w-5 transform rotate-45 origin-center delay-300"></div>
+                    <div className="absolute bg-white ssm:bg-black h-[2px] w-5 transform -rotate-45 origin-center"></div>
                   </>
                 )}
               </div>
@@ -96,13 +96,13 @@ const Navbar = () => {
 
         {/* Sidebar */}
         {sidebarOpen && (
-          <div className="md:hidden absolute top-14 right-0 bg-zinc-100 z-50 w-5/12 h-full mx-0">
-            <div className="flex flex-col justify-start items-center h-full">
+          <div className="md:hidden absolute top-20 right-[-20px] bg-black z-50 w-max ssm:w-6/12 h-dvh mx-0 text-white mr-0">
+            <div className="flex flex-col justify-start items-center">
               <ul className="flex flex-col gap-4 list-none ">
                 {menuItems.map((item, index) => (
                   <li
                     key={index}
-                    className="text-xl font-bold opacity-80 rounded-xl p-2 hover:text-white hover:bg-orange-600 cursor-pointer"
+                    className="text-xl font-bold opacity-80 rounded-xl p-2 hover:text-orange-600  cursor-pointer"
                     onClick={() => {
                       setActiveIndex(index);
                       setSidebarOpen(false);

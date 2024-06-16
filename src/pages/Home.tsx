@@ -1,6 +1,6 @@
+import { useRef } from "react";
 import SearchForm from "../components/SearchForm";
 import AboutPlan from "../components/AboutPlan";
-// import VehicleDetails from "../components/VehicleDetails";
 import HomeBanner from "../components/HomeBanner";
 import ChooseUs from "../components/ChooseUs";
 import Testimonials from "../components/TestimonialsComponent";
@@ -10,15 +10,18 @@ import Footer from "../components/Footer";
 import Vehicledetails from "../components/VehicleDetails";
 
 const Home = () => {
+  const searchFormRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
-      <Hero />
-      <SearchForm />
+      <Hero searchFormRef={searchFormRef} />
+      <div ref={searchFormRef}>
+        <SearchForm />
+      </div>
       <AboutPlan />
-      {/* <VehicleDetails /> */}
-      <Vehicledetails />
+      <Vehicledetails searchFormRef={searchFormRef} />
       <HomeBanner />
-      <ChooseUs />
+      <ChooseUs searchFormRef={searchFormRef} />
       <Testimonials />
       <GetOurApp />
       <Footer />
