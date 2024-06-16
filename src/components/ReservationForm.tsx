@@ -68,6 +68,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
         //   cars.map((car) => (car.name === formData.carType ? carImage : ""));
         // );
         // Set the first car as the selected car initially
+        console.log(cars);
         if (data.length == 0) {
           throw new Error("Failed to fetch data");
         }
