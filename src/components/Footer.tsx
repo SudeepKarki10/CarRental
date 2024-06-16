@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="w-full">
-      <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
-        <div className="grid grid-cols-12 gap-8 py-14 px-2 lg:px-8 lg:grid-cols-8">
-          <div className="mb-0 col-span-full lg:col-span-3 flex flex-col items-center lg:items-start">
-            <h4 className="text-3xl font-bold  text-gray-900  mb-7">
+    <footer className="w-full overflow-x-hidden ">
+      <div className="mx-auto w-full px-2 sm:px-4 lg:px-8 ">
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 py-14 px-2 lg:px-8 lg:grid-cols-8 ">
+          <div className="mb-0 col-span-full lg:col-span-3 flex flex-col items-center lg:items-start text-wrap overflow-x-hidden">
+            <h4 className="text-3xl font-bold text-gray-900 mb-7">
               CAR <span className="text-zinc-800 font-normal">Rental</span>
             </h4>
             <p className="text-gray-500 text-lg lg:max-w-xs text-center lg:text-left mb-4">
@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="w-full text-center lg:w-auto lg:text-left col-span-full sm:col-span-4 md:col-span-4 lg:col-span-2 text-zinc-900">
+          <div className="w-full text-center lg:w-auto lg:text-left col-span-full sm:col-span-4 md:col-span-4 lg:col-span-2 text-zinc-900 text-wrap">
             <h4 className="text-lg text-gray-900 font-medium mb-7">
               Get In Touch
             </h4>
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
 
           <div className="w-full text-center lg:w-auto lg:text-left col-span-full sm:col-span-4 md:col-span-4 lg:col-span-2">
-            <h4 className="text-2xl  text-center text-gray-900 font-bold mb-4 lg:text-left ">
+            <h4 className="text-2xl text-center text-gray-900 font-bold mb-4 lg:text-left">
               SUBSCRIPTION
             </h4>
 

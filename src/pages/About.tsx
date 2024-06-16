@@ -1,8 +1,8 @@
 import CarIcon from "../assets/card1.png"; // Import your car icon
 import AboutImage from "../assets/about-main.jpg"; // Import your about image
 import AboutPlan from "../components/AboutPlan";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PagesBanner from "../components/PagesBanner";
 
 const About = () => {
   return (
@@ -12,10 +12,10 @@ const About = () => {
         <br />
         <p className="text-lg font-semibold">Home/About</p>
       </div>
-      <div className="container-div relative mt-96 p-4 mr-0 w-full flex justify-between items-center">
+      <div className="container-div relative mt-96 p-0 sm:p-4  w-full flex justify-between items-center">
         <div className="flex flex-col md:flex-row items-center md:items-start w-full">
           {/* Image Div */}
-          <div className="w-full md:w-1/2 p-4 flex-shrink-0">
+          <div className="w-full md:w-1/2 p-0 sm:p-4 flex-shrink-0">
             <div className="h-full flex items-center">
               <img
                 src={AboutImage}
@@ -73,6 +73,7 @@ const About = () => {
         </div>
       </div>
       <AboutPlan />
+      <PagesBanner />
       <Footer />
     </>
   );

@@ -14,8 +14,8 @@ const GetOurApp = () => {
             manage your bookings and get 24/7 customer support.
           </p>
 
-          <div className="flex gap-4 items-center justify-center md:justify-start mt-10 w-full">
-            <button className="bg-gray-950 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-900 focus:outline-none w-1/2 ssm:w-4/12">
+          <div className="flex gap-4 items-center justify-center md:justify-start mt-10 w-full flex-wrap">
+            <button className="bg-gray-950 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-900 focus:outline-none w-full sm:w-1/2 ssm:w-4/12">
               <span className="ml-4 flex items-start flex-col leading-none">
                 <span className="text-xs text-white mb-1">GET IT ON</span>
                 <span className="title-font font-medium text-white">
@@ -23,7 +23,7 @@ const GetOurApp = () => {
                 </span>
               </span>
             </button>
-            <button className="bg-gray-950 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-900 focus:outline-none w-1/2 ssm:w-4/12">
+            <button className="bg-gray-950 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-900 focus:outline-none w-full sm:w-1/2  ssm:w-4/12">
               <span className="ml-4 flex items-start flex-col leading-none">
                 <span className="text-xs text-white mb-1">Download on the</span>
                 <span className="title-font font-medium text-white">

@@ -8,22 +8,22 @@ const Hero = () => {
           <h5 className="text-lg font-extrabold text-black mb-2">
             Plan your trip now
           </h5>
-          <h1 className="lg:text-6xl md:text-4xl text-5xl text-black font-bold mb-3 leading-relaxed">
+          <h1 className=" text-3xl ssm:text-5xl lg:text-6xl md:text-4xl  text-black font-bold mb-3 leading-relaxed">
             Save <span className="text-orange-600">big</span> with our <br />
             car rental
           </h1>
-          <p className="text-grey mb-8 mt-8">
+          <p className="text-grey mb-8 mt-8 px-3">
             Rent the car of your dreams. Unbeatable prices, unlimited miles,
             flexible pick-up options and much more.
           </p>
           <div className="btn-container flex flex-cols gap-3 md:justify-start md:items-start items-center justify-center">
-            <button className="btn border-amber-700 p-3 rounded-sm bg-[#FF4D00] text-lg font-bold text-white flex flex-cols justify-center items-center gap-2  w-max">
+            <button className="btn border-amber-700 p-3 rounded-sm bg-[#FF4D00] text-lg font-bold text-white flex flex-cols justify-center items-center gap-2  w-1/2 sm:w-max">
               Book Ride
               <span className="material-symbols-outlined items-center text-center ">
                 check_circle
               </span>
             </button>
-            <button className="btn  border-grey-700 p-3 rounded-sm bg-[#1d1d1d] text-lg font-bold text-white flex flex-cols justify-center items-center gap-2  w-max">
+            <button className="btn  border-grey-700 p-3 rounded-sm bg-[#1d1d1d] text-lg font-bold text-white flex flex-cols justify-center items-center gap-2  w-1/2 sm:w-max">
               Learn More{" "}
               <span className="material-symbols-outlined">chevron_right</span>
             </button>

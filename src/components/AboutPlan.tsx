@@ -9,7 +9,7 @@ const AboutPlan = () => {
         <h5 className="font-bold text-xl md:text-2xl mb-5">
           Plan your trip now
         </h5>
-        <h2 className="font-extrabold text-3xl md:text-5xl">
+        <h2 className="font-extrabold text-2xl text-center sm:text-3xl md:text-5xl ">
           Quick & easy car rental
         </h2>
       </div>
