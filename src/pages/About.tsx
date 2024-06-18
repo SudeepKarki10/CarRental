@@ -45,7 +45,7 @@ const About = () => {
                 <img
                   src={CarIcon}
                   alt="Car Types"
-                  className="w-24 h-auto mb-2"
+                  className="w-max h-auto mb-2"
                 />
                 <p className="text-2xl font-bold">20</p>
                 <p className="text-lg">Car Types</p>
@@ -54,7 +54,7 @@ const About = () => {
                 <img
                   src={CarIcon}
                   alt="Rental Outlets"
-                  className="w-24 h-auto mb-2"
+                  className="w-max h-auto mb-2"
                 />
                 <p className="text-2xl font-bold">85</p>
                 <p className="text-lg">Rental Outlets</p>
@@ -63,7 +63,7 @@ const About = () => {
                 <img
                   src={CarIcon}
                   alt="Repair Shop"
-                  className="w-24 h-auto mb-2"
+                  className="w-max h-auto mb-2"
                 />
                 <p className="text-2xl font-bold">75</p>
                 <p className="text-lg">Repair Shop</p>
