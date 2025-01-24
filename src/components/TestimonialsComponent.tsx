@@ -15,7 +15,7 @@ const Testimonials = () => {
           </p>
         </div>
         <div className="grid gap-8 mb-8 lg:mb-12 lg:grid-cols-2 ">
-          <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-400 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
+          <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-400 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700 animate-slide-in-left">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
               <p className="my-4 text-2xl">
                 "We rented a car from this website and had an amazing
@@ -38,7 +38,7 @@ const Testimonials = () => {
             </figcaption>
           </figure>
 
-          <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-400 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
+          <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-400 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700 animate-slide-in-right">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
               <p className="my-4 text-2xl">
                 "The car was in great condition and made our trip even better.

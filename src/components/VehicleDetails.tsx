@@ -6,6 +6,12 @@ import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 interface CarProperty {
   name: string;
@@ -44,6 +50,44 @@ const VehicleDetails: React.FC = () => {
 
     fetchData();
   }, []);
+
+  // Initial animation when component mounts
+  useGSAP(() => {
+    gsap.from(".car-image", {
+      y: -800, // Start from above the viewport
+      duration: 1.5,
+      opacity: 0,
+      ease: "bounce.out",
+      scale: 0.5, // Bouncy effect
+      scrollTrigger: {
+        trigger: ".car-image",
+        start: "top 30%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
+  // Animation when switching between cars
+  useEffect(() => {
+    if (carImage) {
+      gsap.fromTo(
+        ".car-image",
+        {
+          y: -400,
+          opacity: 0,
+          scale: 0.8,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "bounce.out",
+          clearProps: "all", // Clear properties after animation
+        }
+      );
+    }
+  }, [carImage]);
 
   const handleSelect = (carName: string) => {
     const selectedCarData = carData.find((car) => car.name === carName);
@@ -94,7 +138,7 @@ const VehicleDetails: React.FC = () => {
             <button
               key={car.name}
               className={`py-4 my-2 w-full text-neutral-900 h-18 bg-zinc-200 border-1 border-black opacity-90 text-xl font-bold ${
-                selectedCar === car.name ? "bg-gray-300" : ""
+                selectedCar === car.name ? "bg-[#d44f3a] text-white" : ""
               }`}
               onClick={() => handleSelect(car.name)}
             >
@@ -105,7 +149,7 @@ const VehicleDetails: React.FC = () => {
 
         <div className="show-car-details flex flex-col md:flex-row w-full lg:w-3/4 lg:gap-2 mt-20 lg:mt-0">
           <div className="car-img w-full md:w-8/12 lg:w-8/12">
-            <img src={carImage} alt={selectedCar} className="block" />
+            <img src={carImage} alt={selectedCar} className="block car-image" />
           </div>
           <div className="car-details w-full md:w-4/12 lg:w-4/12 flex justify-center items-center lg:p-2 md:mx-0">
             <TableContainer component={Paper} className="w-full">
