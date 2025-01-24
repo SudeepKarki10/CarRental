@@ -24,7 +24,11 @@ interface Car {
   image: string;
 }
 
-const VehicleDetails: React.FC = () => {
+interface VehicleDetailsProps {
+  searchFormRef: React.RefObject<HTMLDivElement>;
+}
+
+const VehicleDetails: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
   const [carData, setCarData] = useState<Car[]>([]);
   const [selectedCar, setSelectedCar] = useState<string>("");
   const [carProperties, setCarProperties] = useState<CarProperty[]>([]);
@@ -118,6 +122,12 @@ const VehicleDetails: React.FC = () => {
     },
   }));
 
+  const handleReserveNow = () => {
+    if (searchFormRef.current) {
+      searchFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="mt-10 my-20 md:mt-60">
       <div className="heading flex flex-col justify-center items-center gap-3 text-center">
@@ -138,7 +148,7 @@ const VehicleDetails: React.FC = () => {
             <button
               key={car.name}
               className={`py-4 my-2 w-full text-neutral-900 h-18 bg-zinc-200 border-1 border-black opacity-90 text-xl font-bold ${
-                selectedCar === car.name ? "bg-[#d44f3a] text-white" : ""
+                selectedCar === car.name ? "bg-gray-300" : ""
               }`}
               onClick={() => handleSelect(car.name)}
             >
@@ -171,7 +181,10 @@ const VehicleDetails: React.FC = () => {
                   ))}
                 </TableBody>
               </Table>
-              <button className="text-white bg-[#FF4D30] w-full h-12 text-center text-xl font-bold mt-4">
+              <button
+                className="text-white bg-[#FF4D30] w-full h-12 text-center text-xl font-bold mt-4"
+                onClick={handleReserveNow}
+              >
                 RESERVE NOW
               </button>
             </TableContainer>

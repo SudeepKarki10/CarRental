@@ -57,9 +57,10 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
         console.log(data);
 
         const selectedCar = data.find((car) => car.name === formData.carType);
+        console.log(selectedCar?.image);
         if (selectedCar) {
           setCarImage(selectedCar.image);
-          //console.log(carImage);
+          console.log(carImage);
         } else {
           setCarImage("");
         }
@@ -86,7 +87,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [cars, isOpen, formData.carType]);
+  }, [formData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -151,7 +152,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4 w-full flex flex-col md:flex-row justify-center items-center md:items-start gap-0 md:gap-3 mt-10 bg-white">
+          <div className="mb-4 w-full flex flex-col md:flex-row justify-center items-center md:items-start gap-0 md:gap-3 mt-10 mx-0 ssm:ml-12 ssm:mr-12 bg-white">
             <div className="searchformInfo w-full md:w-6/12 h-max flex flex-col items-center justify-center md:items-start gap-1 md:gap-5 p-4 font-xl text mx-auto ">
               <div>
                 <p className="text-xl font-bold text-orange-600">
@@ -197,9 +198,11 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
               <img src={carImage} alt="" className="w-full md:w-auto" />
             </div>
           </div>
-          <div className="mb-4">
-            <h3 className="font-bold">Personal Information</h3>
-            <label>
+          <div className="mb-4 mx-0 ssm:mx-12">
+            <h3 className="font-bold text-orange-600 text-xl">
+              Personal Information
+            </h3>
+            <label className="font-bold text-lg">
               First Name *
               <input
                 type="text"
@@ -210,7 +213,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 required
               />
             </label>
-            <label>
+            <label className="font-bold text-lg">
               Last Name *
               <input
                 type="text"
@@ -221,7 +224,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 required
               />
             </label>
-            <label>
+            <label className="font-bold text-lg">
               Phone Number *
               <input
                 type="number"
@@ -232,7 +235,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 required
               />
             </label>
-            <label>
+            <label className="font-bold text-lg">
               Age *
               <input
                 type="number"
@@ -243,7 +246,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 required
               />
             </label>
-            <label>
+            <label className="font-bold text-lg">
               Email *
               <input
                 type="email"
@@ -254,7 +257,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 required
               />
             </label>
-            <label>
+            <label className="font-bold text-lg">
               Address *
               <input
                 type="text"
@@ -265,7 +268,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 required
               />
             </label>
-            <label>
+            <label className="font-bold text-lg ">
               City *
               <input
                 type="text"
@@ -276,7 +279,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 required
               />
             </label>
-            <label>
+            <label className="font-bold text-lg ">
               Zip Code *
               <input
                 type="text"
@@ -287,7 +290,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 required
               />
             </label>
-            <label className="block mt-4">
+            <label className="block mt-4 font-bold text-lg">
               <input
                 type="checkbox"
                 name="subscribe"
@@ -299,7 +302,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
           </div>
           <button
             type="submit"
-            className="bg-blue-600 text-white p-2 rounded mt-4"
+            className="bg-blue-600 text-white p-2 rounded mt-4 mx-0 ssm:mx-12 mb-8"
             onClick={(e) => handleSubmit(e)}
           >
             Reserve Now

@@ -1,8 +1,8 @@
-import PageBanner from "../assets/PageBanner.jpg";
+import PageBanner from "../../public/assets/PageBanner.jpg";
 
 const PagesBanner = () => {
   return (
-    <div className="relative p-8 bg-zinc-800 text-white h-60 flex justify-center items-center md:justify-start flex-col md:flex-row gap-4 pl-12 md:pl-32">
+    <div className="relative p-8 bg-zinc-800 text-white h-max ssm:h-60 flex justify-center items-center md:justify-start flex-col md:flex-row gap-4 pl-12 md:pl-32 ">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{

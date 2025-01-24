@@ -1,9 +1,18 @@
-import BannerImg from "../assets/chooseus.png";
-import Img1 from "../assets/chooseus1.png";
-import Img2 from "../assets/chooseus2.png";
-import Img3 from "../assets/chooseus3.png";
+import BannerImg from "../../public/assets/chooseus.png";
+import Img1 from "../../public/assets/chooseus1.png";
+import Img2 from "../../public/assets/chooseus2.png";
+import Img3 from "../../public/assets/chooseus3.png";
 
-const ChooseUs = () => {
+interface VehicleDetailsProps {
+  searchFormRef: React.RefObject<HTMLDivElement>;
+}
+
+const ChooseUs: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
+  function handleClick() {
+    if (searchFormRef.current) {
+      searchFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   return (
     <div className="flex flex-col">
       <div className="image m-4 lg:m-10">
@@ -22,7 +31,10 @@ const ChooseUs = () => {
             the bank. Our deals are designed to give you the ultimate renting
             experience, so don't miss out on your chance to save big.
           </p>
-          <button className="bg-orange-600 text-white py-2 px-4 text-xl font-bold mt-3 rounded-md ">
+          <button
+            className="bg-orange-600 text-white py-2 px-4 text-xl font-bold mt-3 rounded-md "
+            onClick={handleClick}
+          >
             Find Details
           </button>
         </div>

@@ -1,5 +1,5 @@
-import Testimon1 from "../assets/testimonial1.png";
-import Testimon2 from "../assets/testimonial2.png";
+import Testimon1 from "../../public/assets/testimonial1.png";
+import Testimon2 from "../../public/assets/testimonial2.png";
 
 const Testimonials = () => {
   return (
