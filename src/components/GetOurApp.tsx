@@ -1,4 +1,4 @@
-import AppImg from "../../public/assets/App.png";
+import AppImg from "/assets/App.png";
 
 const GetOurApp = () => {
   return (

@@ -5,6 +5,7 @@ import About from "./pages/About.tsx";
 import Models from "./pages/Models.tsx";
 import Testimonials from "./pages/Testimonials.tsx";
 import Contact from "./pages/Contact.tsx";
+import Cart from "./pages/Cart.tsx";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/models" element={<Models />}></Route>
         <Route path="/testimonials" element={<Testimonials />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
       </Routes>
     </BrowserRouter>
   );

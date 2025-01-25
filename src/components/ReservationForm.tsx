@@ -54,22 +54,13 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
         const data: Car[] = await response.json();
         setCars(data);
 
-        console.log(data);
-
         const selectedCar = data.find((car) => car.name === formData.carType);
-        console.log(selectedCar?.image);
         if (selectedCar) {
           setCarImage(selectedCar.image);
-          console.log(carImage);
         } else {
           setCarImage("");
         }
 
-        // setCarImage(
-        //   cars.map((car) => (car.name === formData.carType ? carImage : ""));
-        // );
-        // Set the first car as the selected car initially
-        console.log(cars);
         if (data.length == 0) {
           throw new Error("Failed to fetch data");
         }
@@ -87,7 +78,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [formData]);
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -99,7 +90,6 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
     try {
       if (
         userInfo.address === "" ||
@@ -114,9 +104,53 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
         setIsOpen(false);
         throw new Error("All field in the Reservation must be filled.");
       } else {
+        // Create reservation object with image
+        console.log(carImage);
+        const reservation = {
+          carName: formData.carType,
+          pricePerDay: (() => {
+            const selectedCar = cars.find(
+              (car) => car.name === formData.carType
+            );
+            if (!selectedCar) {
+              throw new Error(`Car ${formData.carType} not found`);
+            }
+            const priceProp = selectedCar.properties.find(
+              (prop) => prop.name === "Price"
+            );
+            if (!priceProp) {
+              throw new Error(
+                `Price property not found for car ${formData.carType}`
+              );
+            }
+            const price = parseFloat(priceProp.value);
+            if (isNaN(price) || price <= 0) {
+              throw new Error(
+                `Invalid price format for car ${formData.carType}. Price must be a positive number.`
+              );
+            }
+            return price;
+          })(),
+          bookingDate: formData.pickupDate,
+          dropoffDate: formData.dropoffDate,
+          image: carImage,
+        };
+
+        // Save to localStorage
+        const existingReservations = JSON.parse(
+          localStorage.getItem("reservations") || "[]"
+        );
+        existingReservations.push(reservation);
+        localStorage.setItem(
+          "reservations",
+          JSON.stringify(existingReservations)
+        );
+
         setIsOpen(false);
         setUserInfo(initialInfo);
-        throw new Error("Check your email to confirm an order.");
+
+        // Redirect to Cart page
+        window.location.href = "/cart";
       }
     } catch (error) {
       const errorMessage = (error as Error).message || "Unknown error";

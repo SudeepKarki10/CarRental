@@ -26,12 +26,17 @@ interface Car {
 
 interface VehicleDetailsProps {
   searchFormRef: React.RefObject<HTMLDivElement>;
+  onReserve?: (carName: string) => void;
 }
 
-const VehicleDetails: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
+const VehicleDetails: React.FC<VehicleDetailsProps> = ({
+  searchFormRef,
+  onReserve,
+}) => {
   const [carData, setCarData] = useState<Car[]>([]);
   const [selectedCar, setSelectedCar] = useState<string>("");
   const [carProperties, setCarProperties] = useState<CarProperty[]>([]);
+  const [selectedCarPrice, setSelectCarPrice] = useState<number>(30);
   const [carImage, setCarImage] = useState<string>("");
 
   useEffect(() => {
@@ -54,6 +59,15 @@ const VehicleDetails: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
 
     fetchData();
   }, []);
+
+  const handleScrollToForm = () => {
+    if (searchFormRef.current) {
+      searchFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    if (onReserve) {
+      onReserve(selectedCar);
+    }
+  };
 
   // Initial animation when component mounts
   useGSAP(() => {
@@ -99,6 +113,10 @@ const VehicleDetails: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
       setSelectedCar(carName);
       setCarProperties(selectedCarData.properties);
       setCarImage(selectedCarData.image);
+      const priceProperty = selectedCarData.properties.find(
+        (prop) => prop.name === "Price"
+      );
+      setSelectCarPrice(Number(priceProperty?.value) || 25);
     }
   };
 
@@ -122,12 +140,6 @@ const VehicleDetails: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
     },
   }));
 
-  const handleReserveNow = () => {
-    if (searchFormRef.current) {
-      searchFormRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="mt-10 my-20 md:mt-60">
       <div className="heading flex flex-col justify-center items-center gap-3 text-center">
@@ -148,7 +160,7 @@ const VehicleDetails: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
             <button
               key={car.name}
               className={`py-4 my-2 w-full text-neutral-900 h-18 bg-zinc-200 border-1 border-black opacity-90 text-xl font-bold ${
-                selectedCar === car.name ? "bg-gray-300" : ""
+                selectedCar === car.name ? "bg-[#e04f38] text-white" : ""
               }`}
               onClick={() => handleSelect(car.name)}
             >
@@ -164,7 +176,9 @@ const VehicleDetails: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
           <div className="car-details w-full md:w-4/12 lg:w-4/12 flex justify-center items-center lg:p-2 md:mx-0">
             <TableContainer component={Paper} className="w-full">
               <button className="bg-[#FF4D30] text-white w-full h-12 text-center text-xl font-bold">
-                <span className="text-3xl font-extra mr-4">25$</span>
+                <span className="text-3xl font-extra mr-4">
+                  {selectedCarPrice}
+                </span>
                 /rent per day
               </button>
               <Table aria-label="customized table">
@@ -182,8 +196,8 @@ const VehicleDetails: React.FC<VehicleDetailsProps> = ({ searchFormRef }) => {
                 </TableBody>
               </Table>
               <button
-                className="text-white bg-[#FF4D30] w-full h-12 text-center text-xl font-bold mt-4"
-                onClick={handleReserveNow}
+                className="text-white bg-[#e04f38] w-full h-12 text-center text-xl font-bold mt-4"
+                onClick={handleScrollToForm}
               >
                 RESERVE NOW
               </button>

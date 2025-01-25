@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import SearchForm from "../components/SearchForm";
 import AboutPlan from "../components/AboutPlan";
 import HomeBanner from "../components/HomeBanner";
@@ -11,15 +11,22 @@ import Vehicledetails from "../components/VehicleDetails";
 
 const Home = () => {
   const searchFormRef = useRef<HTMLDivElement>(null);
+  const [selectedCar, setSelectedCar] = useState("");
+
+  const handleCarSelect = (car: string) => {
+    setSelectedCar(car);
+    searchFormRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
       <Hero searchFormRef={searchFormRef} />
-      <div ref={searchFormRef}>
-        <SearchForm />
-      </div>
+      <SearchForm ref={searchFormRef} selectedCar={selectedCar} />
       <AboutPlan />
-      <Vehicledetails searchFormRef={searchFormRef} />
+      <Vehicledetails
+        searchFormRef={searchFormRef}
+        onReserve={handleCarSelect}
+      />
       <HomeBanner />
       <ChooseUs searchFormRef={searchFormRef} />
       <Testimonials />
